@@ -26,4 +26,10 @@ public class AccountOwner extends User {
     public static AccountOwner getAccountOwner(){
         return accountOwner;
     }
+
+    public static void setAccountOwnerToNull(){
+        synchronized (singleTonLock){
+            accountOwner = null;
+        }
+    }
 }

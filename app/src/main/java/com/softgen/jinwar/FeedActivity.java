@@ -26,8 +26,9 @@ import static com.softgen.jinwar.utils.Constants.fromTag;
 import static com.softgen.jinwar.utils.Constants.singleSpace;
 
 public class FeedActivity extends AppCompatActivity {
-
     private AppBarConfiguration mAppBarConfiguration;
+
+    public static String INTENT_TAG = "FeedActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +81,12 @@ public class FeedActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+    }
+
+    public void getProfilePage(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra(fromTag, INTENT_TAG);
+        startActivity(intent);
     }
 
     @Override
