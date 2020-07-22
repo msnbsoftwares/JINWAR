@@ -4,32 +4,46 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.softgen.jinwar.recyclerviews.PostsRecyclerViewAdapter;
 import com.softgen.jinwar.R;
 
-public class HomeFragment extends Fragment {
+import java.util.ArrayList;
+import java.util.List;
 
-    private HomeViewModel homeViewModel;
+public class HomeFragment extends Fragment {
+    private List<String> postOwnersNames = new ArrayList<>();
+    private List<String> postOwnersPictures = new ArrayList<>();
+    private List<String> postContents = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
+        initPosts(root);
+
         return root;
+    }
+
+    private void initPosts(View view){
+        for(int i=0;i<20;i++){
+            postOwnersNames.add("Naman Jain");
+            postContents.add("This is my post number fjlksdjfkldsjfkdjslfkjdskffdfdsfdsfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdndsk hjjdsfkds jkdjf jkdjfd jkdjfkdj: "+(i+1));
+            postOwnersPictures.add("https://i.redd.it/csqq92b0jq951.jpg");
+        }
+
+        initRecyclerView(view);
+    }
+
+    private void initRecyclerView(View view){
+        RecyclerView newsFeed = view.findViewById(R.id.newsFeed);
+        PostsRecyclerViewAdapter postsRecyclerViewAdapter = new PostsRecyclerViewAdapter(view.getContext(), postOwnersNames, postOwnersPictures, postContents);
+        newsFeed.setAdapter(postsRecyclerViewAdapter);
+        newsFeed.setLayoutManager(new LinearLayoutManager(view.getContext()));
     }
 }
