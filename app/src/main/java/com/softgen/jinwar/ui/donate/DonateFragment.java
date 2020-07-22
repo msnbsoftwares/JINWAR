@@ -1,4 +1,4 @@
-package com.softgen.jinwar.ui.gallery;
+package com.softgen.jinwar.ui.donate;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.softgen.jinwar.R;
 
-public class GalleryFragment extends Fragment {
+public class DonateFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private DonateViewModel donateViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        donateViewModel =
+                ViewModelProviders.of(this).get(DonateViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_donate, container, false);
+        final TextView textView = root.findViewById(R.id.donationText);
+        donateViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
