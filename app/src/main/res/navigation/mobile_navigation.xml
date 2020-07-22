@@ -15,6 +15,7 @@
             android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
             app:destination="@id/nav_home_second" />
     </fragment>
+
     <fragment
         android:id="@+id/nav_home_second"
         android:name="com.softgen.jinwar.ui.home.HomeSecondFragment"
@@ -31,13 +32,13 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.softgen.jinwar.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:name="com.softgen.jinwar.ui.dharmashala.DharmashalaFragment"
+        android:label="@string/menu_dharmashala"
+        tools:layout="@layout/fragment_dharmashala" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.softgen.jinwar.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:name="com.softgen.jinwar.ui.donate.DonateFragment"
+        android:label="@string/menu_donate"
+        tools:layout="@layout/fragment_donate" />
 </navigation>

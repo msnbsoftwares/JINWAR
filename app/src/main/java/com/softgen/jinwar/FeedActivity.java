@@ -28,7 +28,9 @@ import static com.softgen.jinwar.utils.Constants.singleSpace;
 public class FeedActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
 
-    public static String INTENT_TAG = "FeedActivity";
+    public static String ACCOUNT_OWNER_INTENT_TAG = "FeedActivityAccountOwner";
+    public static String USER_INTENT_TAG = "FeedActivityUser";
+    public static String BOOK_DHARMASHALA_INTENT_TAG = "FeedActivityBookDharmashala";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +51,7 @@ public class FeedActivity extends AppCompatActivity {
 
         //Setting profile picture
         View headerView = navigationView.getHeaderView(0);
-        ImageView profilePic = (ImageView)headerView.findViewById(R.id.profilePicOfAccountOwner);
+        ImageView profilePic = headerView.findViewById(R.id.profilePicOfAccountOwner);
         profilePic.setImageResource(R.drawable.naman);
 
         Intent intent = getIntent();
@@ -65,10 +67,10 @@ public class FeedActivity extends AppCompatActivity {
             memberid = userDetails.optString("member_id", empty);
 
 
-            TextView name = (TextView) headerView.findViewById(R.id.nameOfAccountOwner);
+            TextView name = headerView.findViewById(R.id.nameOfAccountOwner);
             name.setText(firstName+singleSpace+lastName);
 
-            TextView positionOfUser = (TextView) headerView.findViewById(R.id.typeOfAccountOwner);
+            TextView positionOfUser = headerView.findViewById(R.id.typeOfAccountOwner);
             positionOfUser.setText("Member ID : "+memberid);
         }
 
@@ -83,9 +85,15 @@ public class FeedActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-    public void getProfilePage(View view){
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra(fromTag, INTENT_TAG);
+    public void getAccountOwnerProfilePage(View view){
+        Intent intent = new Intent(this, ProfileActivity.class);
+        intent.putExtra(fromTag, ACCOUNT_OWNER_INTENT_TAG);
+        startActivity(intent);
+    }
+
+    public void getUserProfilePage(View view){
+        Intent intent = new Intent(this, ProfileActivity.class);
+        intent.putExtra(fromTag, USER_INTENT_TAG);
         startActivity(intent);
     }
 
@@ -101,5 +109,16 @@ public class FeedActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public void getDharmashalaAvailibilty(View view){
+        Intent intent = new Intent(view.getContext(), BookDharmashalaActivity.class);
+        intent.putExtra(fromTag, BOOK_DHARMASHALA_INTENT_TAG);
+        intent.putExtra("dharmashala_id", ((TextView)view.findViewById(R.id.dharmashalaID)).getText());
+        startActivity(intent);
+    }
+
+    public void commentOnPost(View view){
+
     }
 }

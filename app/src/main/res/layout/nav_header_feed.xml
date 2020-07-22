@@ -17,7 +17,7 @@
         android:id="@+id/profilePicOfAccountOwner"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:onClick="getProfilePage"
+        android:onClick="getAccountOwnerProfilePage"
         app:civ_border_width="2dp"
         app:civ_border_color="#FFFFFFFF"/>
 

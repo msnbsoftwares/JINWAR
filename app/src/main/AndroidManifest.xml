@@ -10,12 +10,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".BookDharmashalaActivity"
+            android:label="@string/title_activity_book_dharmashala"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ProfileActivity" />
         <activity
             android:name=".FeedActivity"
             android:label="@string/title_activity_feed"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

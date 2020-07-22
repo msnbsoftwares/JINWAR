@@ -13,8 +13,38 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_dharmashala">Dharmashala Booking</string>
+    <string name="menu_donate">Donate</string>
 
     <string name="home_second">Home Second</string>
+
+    <string name="postsLabel">Posts</string>
+    <string name="userAbout">About</string>
+    <string name="userPictures">Pictures</string>
+    <string name="userFollowing">Following</string>
+    <string name="userFollowers">Followers</string>
+
+    <string name="state">State</string>
+    <string name="city">City</string>
+    <string name="search">Search</string>
+    <string name="title_activity_book_dharmashala">BookDharmashalaActivity</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="room_number">Room Number</string>
+    <string name="cooling_system">Cooling System</string>
+    <string name="washroom_type">Washroom Type</string>
+    <string name="dharmashala_timings">Dharmashala Timimgs</string>
+    <string name="book_room">Book Room</string>
+
+    <string name="donate">Donate</string>
+
+    <string name="rupees">₹</string>
 </resources>
