@@ -1,16 +1,16 @@
-package com.softgen.jinwar.ui.slideshow;
+package com.softgen.jinwar.ui.dharmashala;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class DharmashalaViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public DharmashalaViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is Dharmashala fragment");
     }
 
     public LiveData<String> getText() {
